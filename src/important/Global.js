@@ -1,6 +1,7 @@
 import { toast } from 'react-toastify';
 window.getRandomId = () => Math.random().toString(36).slice(2)
 
+
 window.toastify= (msg, type) => {
 
     switch (type) {
@@ -24,7 +25,6 @@ window.toastify= (msg, type) => {
             toast(msg)
             break;
     }
-
 }
 
 

@@ -7,13 +7,11 @@ import GroupRoundedIcon from '@mui/icons-material/GroupRounded';
 
 const initialState = { name: "", email: "", password: "" };
 
-
 function Signup() {
 
   const [state, setState] = useState(initialState);
   const [isProcessing, setIsProcessing] = useState(false);
   const navigate = useNavigate();
-
 
   const handleChange = e => {
     const { name, value } = e.target
@@ -54,7 +52,6 @@ function Signup() {
   return (
     <div className='todo d-flex  justify-content-center align-items-center'  >
 
-
       <div className="card mx-auto p-4 mt-5" style={{ width: 400, backgroundColor: "rgba(54, 53, 53, 0.5)" }}>
         <div className="text-center mb-2">
           <span ><GroupRoundedIcon className='fs-1' /></span>
@@ -65,7 +62,6 @@ function Signup() {
             <div className="col">
 
               <form>
-
                 <div class="form-outline mb-3 m">
                   <label class="form-label" for="form6Example3">Full Name</label>
                   <input type="text" name='name' id="title" class="form-control" onChange={handleChange} />
@@ -91,18 +87,14 @@ function Signup() {
                     }</button>
                 </div>
 
-
                 <div className="text-center mt-4">
                   <Link className='text-decoration-none text-center text-white' to='/auth/login'>Already have an account</Link>
                 </div>
-
               </form>
-
             </div>
           </div>
         </div>
       </div>
-
     </div>
   );
 }

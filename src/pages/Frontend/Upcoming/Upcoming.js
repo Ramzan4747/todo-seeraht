@@ -6,7 +6,6 @@ import { db } from '../../../config/firbase';
 import dayjs from 'dayjs';
 import { useAuthContext } from '../../../context/AuthContext';
 
-
 const initialState = { title: "", location: "", date: "", description: "" }
 
 export default function Anytime() {
@@ -29,8 +28,6 @@ export default function Anytime() {
     getDocument();
 
   }, []);
-
-
 
   const getDocument = async () => {
 
@@ -106,54 +103,50 @@ export default function Anytime() {
     }
   }
 
-
-
   return (
     <>
-    <Content
-      style={{
-        margin: '24px 16px',
-        padding: 24,
-        // minHeight: 280,
-        minHeight: "100vh",
-        background: '#252525',
-        color: 'white'
-      }}
-    >
+      <Content
+        style={{
+          margin: '24px 16px',
+          padding: 24,
+          // minHeight: 280,
+          minHeight: "100vh",
+          background: '#252525',
+          color: 'white'
+        }}
+      >
 
-      <div className="container"   >
-        {!isProcessing
+        <div className="container"   >
+          {!isProcessing
 
-          ? document.map((todo, i) => {
+            ? document.map((todo, i) => {
 
-            return <div className="row mb-3" key={i} style={{ backgroundColor: '#363636', borderRadius: "8px" }}>
-              <div className="col" style={{ marginTop: 10, marginBottom: 10 }}>
+              return <div className="row mb-3" key={i} style={{ backgroundColor: '#363636', borderRadius: "8px" }}>
+                <div className="col" style={{ marginTop: 10, marginBottom: 10 }}>
 
-                <p style={{ marginBottom: 0 }}> <span className='fw-bold' style={{ color: "#C4531A", fontSize: "15px" }}>Title: </span> <span style={{ color: '#C3C3C3' }}>{todo.title}</span></p>
-                <p style={{ marginBottom: 0 }}> <span className='fw-bold' style={{ color: "#C4531A", fontSize: "15px" }}>Location: </span> <span style={{ color: '#C3C3C3' }}>{todo.location}</span></p>
-                <p style={{ marginBottom: 0 }}> <span className='fw-bold' style={{ color: "#C4531A", fontSize: "15px" }}>Date: </span> <span style={{ color: '#C3C3C3' }}>{todo.date}</span></p>
-                <p style={{ marginBottom: 0 }}> <span className='fw-bold' style={{ color: "#C4531A", fontSize: "15px" }}>Description: </span> <span style={{ color: '#C3C3C3' }}>{todo.description}</span></p>
-                <div className='mt-2'>
-                  <button className='btn btn-primary me-2' onClick={() => setEditTodo(todo)} data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>
-                  <button className='btn btn-danger' onClick={() => { handleDelete(todo) }}>Del</button>
+                  <p style={{ marginBottom: 0 }}> <span className='fw-bold' style={{ color: "#C4531A", fontSize: "15px" }}>Title: </span> <span style={{ color: '#C3C3C3' }}>{todo.title}</span></p>
+                  <p style={{ marginBottom: 0 }}> <span className='fw-bold' style={{ color: "#C4531A", fontSize: "15px" }}>Location: </span> <span style={{ color: '#C3C3C3' }}>{todo.location}</span></p>
+                  <p style={{ marginBottom: 0 }}> <span className='fw-bold' style={{ color: "#C4531A", fontSize: "15px" }}>Date: </span> <span style={{ color: '#C3C3C3' }}>{todo.date}</span></p>
+                  <p style={{ marginBottom: 0 }}> <span className='fw-bold' style={{ color: "#C4531A", fontSize: "15px" }}>Description: </span> <span style={{ color: '#C3C3C3' }}>{todo.description}</span></p>
+                  <div className='mt-2'>
+                    <button className='btn btn-primary me-2' onClick={() => setEditTodo(todo)} data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>
+                    <button className='btn btn-danger' onClick={() => { handleDelete(todo) }}>Del</button>
+                  </div>
                 </div>
               </div>
+
+            })
+            : <div class="d-flex justify-content-center mt-5">
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
             </div>
+          }
 
-          })
-          : <div class="d-flex justify-content-center mt-5">
-            <div class="spinner-border" role="status">
-              <span class="sr-only">Loading...</span>
-            </div>
-          </div>
-        }
+        </div>
+      </Content>
 
-      </div>
-    </Content>
-
-
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered ">
           <div class="modal-content">
             <div class="modal-header">

@@ -17,15 +17,11 @@ export default function Anytime() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [isProcessingUpdate, setIsProcessingUpdate] = useState(false)
   const [editTodo, setEditTodo] = useState(initialState);
-  
-
-
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setEditTodo(s => ({ ...s, [name]: value }))
   }
-
 
   useEffect(() => {
 
@@ -54,7 +50,6 @@ export default function Anytime() {
     setDocument(array)
     setIsProcessing(false)
   }
-
 
   const handleUpdate = async () => {
 
@@ -85,9 +80,6 @@ export default function Anytime() {
     setIsProcessingUpdate(false)
   }
 
-
-
-
   const handleDelete = async (todo) => {
     todo.status = "unactive"
 
@@ -109,8 +101,6 @@ export default function Anytime() {
       window.toastify("Todo is not moved to trash", "error")
     }
   }
-
-
 
   return (
 <>

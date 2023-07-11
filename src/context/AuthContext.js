@@ -9,7 +9,6 @@ export default function AuthContextProvider(props) {
 const [user, setUser]= useState({})
 const [isAuthenticated, setIsAuthenticated]= useState(false)
 
-
 useEffect(()=>{
 
     onAuthStateChanged(auth, (user) => {
@@ -27,6 +26,7 @@ useEffect(()=>{
         // ...
       }
     });
+    
   },[])
 
   return (

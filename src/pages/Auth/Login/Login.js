@@ -15,12 +15,9 @@ function Login() {
   const navigate = useNavigate();
 
   const handleChange = e => {
-
     const { name, value } = e.target;
     setState(s => ({ ...s, [name]: value }))
-
   }
-
 
   const { setIsAuthenticated } = useAuthContext();
 
@@ -53,7 +50,6 @@ function Login() {
   return (
     <div className='todo d-flex  justify-content-center align-items-center'  >
 
-
       <div className="card mx-auto p-4 mt-5" style={{ width: 400, backgroundColor: "rgba(54, 53, 53, 0.5)" }}>
         <div className="text-center mb-2">
           <span ><GroupRoundedIcon className='fs-1' /></span>
@@ -70,7 +66,6 @@ function Login() {
                   <input type="text" name='email' id="title" class="form-control" onChange={handleChange} />
                 </div>
 
-
                 <div class="form-outline mb-3">
                   <label class="form-label" for="form6Example4">Password</label>
                   <input type="password" name='password' id="location" class="form-control" onChange={handleChange} />
@@ -85,19 +80,15 @@ function Login() {
                     }</button>
                 </div>
 
-
                 <div className="text-center mt-4">
                   <Link className='text-decoration-none text-center me-3 col-12 text-white' to='/auth/signup'>Not have an account</Link>
                   <Link className='text-decoration-none text-center text-white col-12' to='/auth/forgot'>Forgot Password</Link>
                 </div>
-
               </form>
-
             </div>
           </div>
         </div>
       </div>
-
     </div>
   );
 }

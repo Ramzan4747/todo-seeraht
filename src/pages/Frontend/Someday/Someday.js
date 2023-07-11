@@ -5,23 +5,17 @@ import { doc, deleteDoc } from "firebase/firestore";
 import { db } from '../../../config/firbase';
 import { useAuthContext } from '../../../context/AuthContext';
 
-import dayjs from 'dayjs';
-
 const initialState = { title: "", location: "", date: "", description: "" }
 
 export default function Anytime() {
   
   const { user } = useAuthContext();
 
-
   const [state, setState] = useState({ dated: '' })
   const [document, setDocument] = useState([]);
   const [isProcessing, setIsProcessing] = useState(false);
   const [editTodo, setEditTodo] = useState(initialState);
   const [isProcessingUpdate, setIsProcessingUpdate] = useState(false)
-
-
-
 
   const handleDate = (e) => {
     const { name, value } = e.target
@@ -32,9 +26,6 @@ export default function Anytime() {
     const { name, value } = e.target
     setEditTodo(s => ({...s, [name]: value }))
   }
-
-
-
 
   const getDocument = async () => {
 
@@ -110,8 +101,6 @@ export default function Anytime() {
     }
   }
 
-
-
   return (
 <>
     <Content
@@ -128,9 +117,9 @@ export default function Anytime() {
       <div className="container mb-2"   >
         <div className="row">
           <div className="col">
-            <div class="form-outline mb-3">
+            <div class="form-outline mb-3 ">
 
-              <input onChange={handleDate} className='w-50 form-control mx-auto' type="date" name='dated' id="form6Example5" class="form-control" />
+              <input onChange={handleDate} className=' form-control mx-auto' type="date" name='dated' id="form6Example5" class="form-control" />
 
               <div className="row mx-auto mt-3">
                 <button onClick={getDocument} type="submit" className="btn btn-secondary mt-2 mx-auto  w-25 "  style={{ backgroundColor: "1D1D1D", color: "white" }}>Check Data</button>
@@ -141,7 +130,6 @@ export default function Anytime() {
           </div>
         </div>
       </div>
-
 
 
       <div className="container"   >
@@ -173,7 +161,6 @@ export default function Anytime() {
 
       </div>
     </Content>
-
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered ">

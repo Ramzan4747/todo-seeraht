@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './home.scss'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useAuthContext } from '../../../context/AuthContext';
 import { serverTimestamp, doc, setDoc } from "firebase/firestore";
 import { db } from '../../../config/firbase';
@@ -59,7 +59,6 @@ export default function Home() {
     // setState(initialState);
 
   }
-
 
   const createDoc = async (data) => {
     setIsProcessing(true)
@@ -127,7 +126,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
       </div>
     </>
 

@@ -44,8 +44,6 @@ export default function Anytime() {
     }
   }
 
-
-
   return (
     <Content
       style={{

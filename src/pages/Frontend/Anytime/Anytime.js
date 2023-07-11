@@ -22,7 +22,6 @@ export default function Anytime() {
     setEditTodo(s => ({ ...s, [name]: value }))
   }
 
-
   useEffect(() => {
 
     getDocument();
@@ -45,7 +44,6 @@ export default function Anytime() {
     setDocument(array)
     setIsProcessing(false)
   }
-
 
   const handleUpdate = async () => {
 
@@ -85,7 +83,6 @@ export default function Anytime() {
       await setDoc(doc(db, "trash", todo.id), todo)
         .then(async () => {
 
-
           await deleteDoc(doc(db, "todos", todo.id));
           window.toastify("Todo is moved to trash", "success")
 
@@ -111,7 +108,6 @@ export default function Anytime() {
           color: 'white'
         }}
       >
-
 
         <div className="container"   >
           {!isProcessing
@@ -142,8 +138,6 @@ export default function Anytime() {
               </div>
             </>
           }
-
-
         </div>
       </Content>
 
@@ -182,6 +176,5 @@ export default function Anytime() {
         </div>
       </div>
     </>
-
   )
 }

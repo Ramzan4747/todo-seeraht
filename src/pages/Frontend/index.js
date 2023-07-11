@@ -7,24 +7,16 @@ import AddIcon from '@mui/icons-material/Add';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import SearchIcon from '@mui/icons-material/Search';
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from '@ant-design/icons';
+import {MenuFoldOutlined,MenuUnfoldOutlined,} from '@ant-design/icons';
 import { Layout, Menu, Button, theme } from 'antd';
 import PersonOffIcon from '@mui/icons-material/PersonOff';
 
 import { Typography } from 'antd';
 import { items } from './Sidebar';
-import { Navigate } from 'react-router-dom';
-import { Login } from '@mui/icons-material';
 import { useAuthContext } from '../../context/AuthContext';
 const { Title } = Typography;
 
-const { Header, Sider, Content, Footer } = Layout;
+const { Header, Sider, Footer } = Layout;
 
 export default function Index() {
   const [collapsed, setCollapsed] = useState(false);
@@ -63,7 +55,6 @@ export default function Index() {
         />
 
       </Sider>
-
 
       <Layout style={{ backgroundColor: '#252525' }}>
 
